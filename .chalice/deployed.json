@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "rest_api_id": "5otfywymk3",
+    "chalice_version": "0.7.0",
+    "region": "eu-central-1",
+    "backend": "api",
+    "api_handler_name": "aws_lambda_test-dev",
+    "api_handler_arn": "arn:aws:lambda:eu-central-1:014649810021:function:aws_lambda_test-dev",
+    "api_gateway_stage": "dev"
+  }
+}
