@@ -1,2 +1,11 @@
 .chalice/deployments/
 .chalice/venv/
+*.rdb
+*.pyc
+*.pyo
+*.swo
+*.sublime-*
+*.swp
+.idea/*
+.idea
+.idea/*
