@@ -24,12 +24,15 @@ app.debug = True
 def index():
     return {'hello': 'world'}
 
+
 @app.route('/name/{name}')
 def print_name(name):
     return {'hello': '{}'.format(name)}
 
+
 OBJECTS = {
 }
+
 
 @app.route('/htmltopdf', methods=['GET'])
 def htmltopdf():
@@ -49,6 +52,7 @@ def htmltopdf():
     S3.put_object(Body=output, Bucket=BUCKET, Key=key, ACL='public-read')
     return {'status': 'ok', 'url': HOST + key}
 
+
 @app.route('/objects/{key}', methods=['GET', 'PUT'])
 def myobject(key):
     request = app.current_request
@@ -60,11 +64,13 @@ def myobject(key):
         except KeyError:
             raise NotFoundError(key)
 
+
 @app.route('/sleep')
 def sleep():
     seconds_to_sleep = 10
     time.sleep(seconds_to_sleep)
     return {'sleeped': '{} secs'.format(seconds_to_sleep)}
+
 
 @app.route('/find-bin')
 def find_bin():
@@ -78,10 +84,11 @@ def find_bin():
 
     return {'current_dir': result}
 
+
 def optimize(f):
     optimize_process = subprocess.Popen(
         '/usr/local/bin/cjpeg',
-        #'./cjpeg0' ???
+        # './cjpeg0' ???
         stdin=f,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE
